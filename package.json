@@ -11,7 +11,8 @@
     "cleanesm": "sed -i.bck 's/self/globalThis/g' esm/index.js && rm esm/index.js.bck",
     "min": "echo '/*! (c) Andrea Giammarchi - ISC */' > min.js && uglifyjs index.js -c -m >> min.js",
     "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c",
-    "test": "istanbul cover test/index.js"
+    "test": "istanbul cover test/index.js",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [],
   "author": "Andrea Giammarchi",
